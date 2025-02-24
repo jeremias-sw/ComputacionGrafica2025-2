@@ -373,7 +373,7 @@ int main() {
 			 - - - -
 		*/
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-4.0f, 3.1f, 0.2f));	// se posiciona
+		model = glm::translate(model, glm::vec3(-3.9f, 3.1f, 0.2f));	// se posiciona
 		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));			// se escala
 		model = glm::rotate(model, 0.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // se rota en x
 		model = glm::rotate(model, 3.17f, glm::vec3(0.0f, 1.0f, 0.0f));	// se rota en y
