@@ -384,15 +384,9 @@ int main() {
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// ------------------------------------------------------------------
-
+		// ==================================================================
 
 		glBindVertexArray(0);
-
-
-
-		
-		
-		
 
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
@@ -404,9 +398,6 @@ int main() {
 
 	glfwTerminate();
 	return EXIT_SUCCESS;
-
-  
-
 }
 
 
