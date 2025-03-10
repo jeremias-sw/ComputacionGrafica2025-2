@@ -506,7 +506,7 @@ int main() {
 		 else
 			 dedo3 += 0.0f;
 	 if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-		 if (dedo3 >= -30.0f)
+		 if (dedo3 >= -45.0f)
 			 dedo3 -= 0.09f;
 		 else
 			 dedo3 -= 0.0f;
