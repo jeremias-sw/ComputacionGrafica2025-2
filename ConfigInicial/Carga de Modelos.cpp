@@ -102,7 +102,9 @@ int main( )
     
     // Load models
     Model dog((char*)"Models/RedDog.obj");
-    Model stick((char*)"Models/source/stick_2_repaired.obj");
+    Model stick((char*)"Models/stick/source/stick_2_repaired.obj");
+    Model orange((char*)"Models/orange/source/fr_caraOrange/fr_caraOrange.obj");
+    Model land((char*)"Models/casa/lowpoly_land2.obj");
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
   
@@ -145,6 +147,22 @@ int main( )
         model = glm::scale(model, glm::vec3(0.03f, 0.03f, 0.03f)); // se escala (se reduce la escala por el alto detalle del modelo)
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         stick.Draw(shader);                                         // se dibuja la rama
+
+        // cuarto modelo, naranja
+        model = glm::translate(model, glm::vec3(3.4f, 3.4f, 3.4f)); // Se posiciona
+        model = glm::scale(model, glm::vec3(100.3f, 100.3f, 100.3f)); // se escala (se reduce la escala por el alto detalle del modelo)
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        orange.Draw(shader);
+
+        // quinnto modelo, casa con río
+        model = glm::translate(model, glm::vec3(0.0f, -2.4f, 0.0f)); // Se posiciona
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f)); // se escala (se reduce la escala por el alto detalle del modelo)
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        land.Draw(shader);
+
+
+
+
 
         // Swap the buffers
         glfwSwapBuffers( window );
