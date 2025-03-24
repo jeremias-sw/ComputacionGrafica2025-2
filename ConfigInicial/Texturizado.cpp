@@ -106,19 +106,101 @@ int main()
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
 	{
+		// Cara 1 del cubo (Australia y Nueva Zelanda)
+		// 
+		//		-
+		//	O	-	-	-
+		//		-
+		// 
 		// Positions            // Colors           // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f,	// esquina inferior izquierda
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		1.0f,0.0f,	// esquina inferior derecha
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,1.0f,	// esquina superior derecha
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,	// esquina superior izquierda
+		-0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,		0.0f,0.334f,	// esquina inferior izquierda	// 0 (A)
+		0.5f, -0.5f, 0.5f,	   1.0f, 1.0f,1.0f,		0.25f,0.334f,	// esquina inferior derecha		// 1 (B)
+		0.5f,  0.5f, 0.5f,     1.0f, 1.0f,1.0f,	    0.25f,0.666f,	// esquina superior derecha		// 2 (C)
+		-0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,		0.0f,0.666f,	// esquina superior izquierda	// 3 (D)	
+		// -----------------------------------------------------------------------------------------
 
-		
+		// Cara 2 del cubo (Norte y Sudamérica)
+		// 
+		//		-
+		//	-	O	-	-
+		//		-
+		// 
+		// Positions            // Colors           // Texture Coords
+		0.5f, -0.5f, 0.5f,     1.0f, 1.0f,1.0f,		0.25f,0.334f,	// esquina inferior izquierda	// 4 (B)
+		0.5f, -0.5f, -0.5f,	   1.0f, 1.0f,1.0f,		0.5f,0.334f,	// esquina inferior derecha		// 5 (E)
+		0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f, 	0.5f,0.666f,	// esquina superior derecha		// 6 (F)
+		0.5f,  0.5f, 0.5f,     1.0f, 1.0f,1.0f,		0.25f,0.666f,	// esquina superior izquierda	// 7 (C)
+		// ---------------------------------------------------------------------------------------------
+
+		// Cara 3 del cubo (África)
+		// 
+		//		-
+		//	-	-	O	-
+		//		-
+		// 
+		// Positions            // Colors           // Texture Coords
+		-0.5f, -0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.75f,0.334f,	// esquina inferior izquierda	// 8 (G)
+		0.5f, -0.5f, -0.5f,	   1.0f, 1.0f,1.0f,			0.5f,0.334f,	// esquina inferior derecha		// 9 (E)
+		0.5f,  0.5f, -0.5f,     1.0f, 1.0f,1.0f,	    0.5f,0.666f,	// esquina superior derecha		// 10 (F)
+		-0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.75f,0.666f,	// esquina superior izquierda	// 11 (H)
+		// ---------------------------------------------------------------------------------------------
+
+		// Cara 4 del cubo (Asia y parte de Australia)
+		// 
+		//		-
+		//	-	-	-	O
+		//		-
+		// 
+		// Positions            // Colors           // Texture Coords
+		-0.5f, -0.5f, 0.5f,     1.0f, 1.0f,1.0f,		1.0f,0.334f,	// esquina inferior izquierda	// 12 (A)
+		-0.5f, -0.5f, -0.5f,	   1.0f, 1.0f,1.0f,		0.75f,0.334f,	// esquina inferior derecha		// 13 (G)
+		-0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f, 	    0.75f,0.666f,	// esquina superior derecha		// 14 (H)
+		-0.5f,  0.5f, 0.5f,     1.0f, 1.0f,1.0f,		1.0f,0.666f,	// esquina superior izquierda	// 15 (D)
+		// ---------------------------------------------------------------------------------------------
+
+		// Cara 5 del cubo (Norteamérica y el Ártico)
+		// 
+		//		O
+		//	-	-	-	-
+		//		-
+		// 
+		// Positions            // Colors           // Texture Coords
+		0.5f,  0.5f, 0.5f,	   1.0f, 1.0f,1.0f,			0.25f,0.666f,	// esquina inferior izquierda	// 16 (C) 
+		0.5f,  0.5f, -0.5f,     1.0f, 1.0f,1.0f,	    0.5f,0.666f,	// esquina inferior derecha		// 17 (F) 
+		-0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.5f,1.0f,		// esquina superior derecha 	// 18 (H)
+		-0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,			0.25f,1.0f,		// esquina superior izquierda	// 19 (D)
+		// -----------------------------------------------------------------------------------------
+
+		// Cara 6 del cubo (Antártida y punta sur de Sudamérica)
+		// 
+		//		-
+		//	-	-	-	-
+		//		O
+		// 
+		// Positions            // Colors           // Texture Coords
+		-0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,			0.25f,0.0f,	// esquina inferior izquierda	// 20 (A) 
+		-0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,			0.5f,0.0f,	// esquina inferior derecha		// 21 (G) 
+		0.5f, -0.5f, -0.5f,	   1.0f, 1.0f,1.0f,		    0.5f,0.334f,	// esquina superior derecha 	// 22 (E)
+		0.5f, -0.5f, 0.5f,	   1.0f, 1.0f,1.0f,			0.25f,0.334f,	// esquina superior izquierda	// 23 (B)
+		// -----------------------------------------------------------------------------------------
+
 	};
 
 	GLuint indices[] =
 	{  // Note that we start from 0!
 		0,1,3,
-		1,2,3
+		1,2,3,
+		4,5,7,
+		5,6,7,
+		8,9,11,
+		9,10,11,
+		12,13,15,
+		13,14,15,
+		16,17,19,
+		17,18,19,
+		20,21,23,
+		21,22,23
+
 	
 	};
 
@@ -158,13 +240,13 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
 	// Diffuse map
-	image = stbi_load("images/InkPaint.png", &textureWidth, &textureHeight, &nrChannels,0);
+	image = stbi_load("images/WorldFacesTex.jpg", &textureWidth, &textureHeight, &nrChannels,0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	if (image)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
@@ -213,7 +295,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
 		// Swap the screen buffers
