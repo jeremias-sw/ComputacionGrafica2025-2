@@ -1,6 +1,6 @@
 
 /*
-Previo 7
+Práctica 7
 Sánchez Wilhelm Jeremias
 314309064
 Fecha de entrega: 18 de marzo de 2025*/
