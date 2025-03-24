@@ -3,7 +3,7 @@
 Práctica 7
 Sánchez Wilhelm Jeremias
 314309064
-Fecha de entrega: 18 de marzo de 2025*/
+Fecha de entrega: 23 de marzo de 2025*/
 
 #include <iostream>
 #include <cmath>
