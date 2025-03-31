@@ -112,7 +112,7 @@ int main()
 
     // Load models
     Model red_dog((char*)"Models/RedDog.obj");
-    Model orange((char*)"Models/orange/source/fr_caraOrange/fr_caraOrange.obj");
+    // Model orange((char*)"Models/orange/source/fr_caraOrange/fr_caraOrange.obj");
     Model casa((char*)"Models/casa/lowpoly_land2.obj");
     Model moon((char*)"Models/moon/textures/moon_2.obj");
     glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
@@ -344,23 +344,23 @@ void DoMovement()
             rot -= 0.1f;
     }
 
-    if (keys[GLFW_KEY_O]) // Mover el sol en su órbita
+    if (keys[GLFW_KEY_O]) // establece la órbita del sol
     {
-        rot += 0.002f; // Incrementa el ángulo (ajustable para velocidad)
-        if (rot > glm::pi<float>()) // Limita a media circunferencia
-            rot = glm::pi<float>();
+        rot += 0.002f;              // Incrementa el ángulo 
+        if (rot > glm::pi<float>()) 
+            rot = glm::pi<float>(); // reduce el movimiento a 180 grados (pi)
     }
-    if (keys[GLFW_KEY_L]) // Retroceder el sol
+    if (keys[GLFW_KEY_L]) 
     {
-        rot -= 0.002f;
-        if (rot < 0.0f)
+        rot -= 0.002f;      // reduce el valor de rotación  
+        if (rot < 0.0f)     // para imitar el movimiento en retroceso
             rot = 0.0f;
     }
 
-    // Movimiento semicircular con radio 8.0f
-    float radius = 21.0f;
-    lightPos.x = radius * cos(rot) + 3.5f;
-    lightPos.y = radius * sin(rot) + 3.5f; // Elevación inicial en y
+    // Movimiento semicircular 
+    float radius = 21.0f;                   // radio de la órbita
+    lightPos.x = radius * cos(rot) + 3.5f;  // movimiento en el eje x
+    lightPos.y = radius * sin(rot) + 3.5f;  // movimiento en el eje y
 }
 
 // Is called whenever a key is pressed/released via GLFW
@@ -397,7 +397,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
     if (key == GLFW_KEY_N && action == GLFW_PRESS) {
 
-        esLuna = !esLuna;
+        esLuna = !esLuna;   // cambio de la bandera de la luna
     }
 
 
