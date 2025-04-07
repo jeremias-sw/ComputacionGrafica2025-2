@@ -1,8 +1,8 @@
 /*
 Sánchez Wilhelm Jeremias
 314309064
-Previo 9
-Fecha de entrega: 1 de abril de 2025
+Práctica 9
+Fecha de entrega: 6 de abril de 2025
 */
 
 
